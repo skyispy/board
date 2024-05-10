@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header {
+            width: 100%;
+        }
+        .header > span {
+            display: flex;
+            justify-content: center;
+            font-size: 24px;
+            margin-top: 30px;
+        }
+        .header > .header-content {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            margin-top: 20px;
+            margin: 0px 320px;
+        }
+
+        .search-box{
+            width: 100%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .search-box > #search_text{
+            width: 44%;
+        }
+        .search-box > #search_btn{
+            width: 50px;
+            margin-left: 10px;
+        }
+
+        .content {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .content > .main-box {
+            width: 50%;
+            height: 50px;
+            margin-top: 20px;
+            font-size: 20px;
+            border: 1px solid;
+            display: flex;
+            float: left;
+        }
+        .main-box > span:nth-child(1){
+            width: 30%;
+            border-right: 1px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .main-box > span:nth-child(2){
+            width: 40%;
+            border-right: 1px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main-box > span:nth-child(3){
+            width: 20%;
+            border-right: 1px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main-box > span:nth-child(4){
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content > .ad-box{
+            width: 160px;
+            height: 350px;
+            background-color: blueviolet;
+            position: absolute;
+            left: 82%;
+        }
+        .name{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .name > .name-box {
+            width: 50%;
+            height: 30px;
+            margin-top: 20px;
+            font-size: 20px;
+            border: 1px solid;
+            display: flex;
+            background-color: rgb(192, 191, 191);
+        }
+        .name-box > span:nth-child(1){
+            width: 30%;
+            border-right: 1px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .name-box > span:nth-child(2){
+            width: 40%;
+            border-right: 1px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .name-box > span:nth-child(3){
+            width: 20%;
+            border-right: 1px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .name-box > span:nth-child(4){
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .footer > div {
+            width: 70%;
+            height: 80px;
+            font-size: 30px;
+            background-color: rgb(0, 157, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span>메인 페이지</span>
+        <div class="header-content">
+            <span>게시글</span>
+            <a href="./board.html">작성</a>
+        </div>
+    </div>
+    <div class="search-box">
+        <input type="text" id="search_text" placeholder="제목을 입력해주세요">
+        <button id="search_btn">검색</button>
+    </div>
+    <div class="name">
+        <div class="name-box">
+            <span>작성자</span>
+            <span>제목</span>
+            <span>날짜</span>
+            <span>조회수</span>
+        </div>
+    </div>    
+    <div class="content">
+    </div>
+    <div class="footer"></div>
+</body>
+<script src="./main.js"></script>
+</html>

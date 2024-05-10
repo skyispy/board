@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        #header {
+            width: 100%;
+        }
+
+        #header > span {
+            display: flex;
+            justify-content: center;
+            padding-top: 30px;
+            font-size: 24px;
+        }
+
+        .header-box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .header-box > input:nth-child(1) {
+            width: 25%;
+            font-size: 20px;
+            margin-right: 3px;
+        }
+
+        .header-box > input:nth-child(2) {
+            width: 45%;
+            height: 50px;
+            font-size: 20px;
+        }
+
+        #content {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #content > input {
+            width: 70%;
+            height: 460px;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        #footer {
+            width: 80%;
+            display: flex;
+            justify-content: end;
+            margin-top: 30px;
+        }
+
+        #footer > #write_btn {
+            width: 80px;
+            height: 40px;
+            margin-right: 20px;
+        }
+
+        #footer > #cancel {
+            width: 80px;
+            height: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        <span>작성 페이지</span>
+        <div class="header-box">
+            <input type="text" id="write_writer" placeholder="작성자">
+            <input type="text" id="write_title" placeholder="제목">
+        </div>
+    </div>
+    <div id="content">
+        <input type="text" id="write_content" placeholder="글 내용">
+    </div>
+    <div id="footer">
+        <button id="write_btn">작성</button>
+        <button id="cancel">취소</button>
+    </div>
+</body>
+<script src="./board.js"></script>
+</html>

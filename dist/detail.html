@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrap {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .wrap > .page-name {
+            width: 100%;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            padding-top: 30px;
+        }
+        .wrap > .title{
+            width: 100%;
+            font-size: 22px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .wrap > .info{
+            width: 90%;
+            padding-left: 200px;
+            padding-top: 36px;
+            font-size: 18px;
+        }
+        .info > #writer{
+            padding-left: 30px;
+        }
+        .info > #date{
+            padding-left: 6px;
+        }
+        .info > #count-text{
+            padding-left: 520px;
+        }
+        .info > #count{
+            padding-left: 10px;
+        }
+        .wrap > .content{
+            width: 70%;
+            height: 430px;
+            margin-top: 30px;
+            padding: 30px;
+            line-height: 30px;
+            background-color: cadetblue;
+            font-size: 20px;
+
+        }
+        .wrap > .btn{
+            width: 80%;
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 30px;
+        }
+        .btn > #list{
+            width: 80px;
+            height: 40px;
+        }
+        .btn > #modify{
+            width: 80px;
+            height: 40px;
+            margin-left: 6px;
+        }
+        .btn > #delete{
+            width: 80px;
+            height: 40px;
+            margin-left: 6px;
+            margin-right: 100px;
+        }
+    </style>
+</head>
+<!-- <link rel="stylesheet" href="./detail.css"> -->
+<body>
+    <div class="wrap">
+        <span class="page-name">상세 페이지</span>
+        <!-- <span>제목:</span> -->
+        <span class="title">
+        </span>
+        <div class="info">
+            <span id="writer"></span>
+            <span id="date"></span>
+            <span id="count-text">조회수</span>
+            <span id="count"></span>
+        </div>
+        <div class="content">
+        
+        </div>
+        <div class="btn">
+            <button id="list">목록</button>
+            <button id="modify">수정</button>
+            <button id="delete">삭제</button>
+        </div>
+    </div>
+</body>
+<script src="./detail.js"></script>
+</html>
