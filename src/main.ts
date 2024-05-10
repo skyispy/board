@@ -132,53 +132,53 @@ class MainBoardManager {
 const mainManager = new MainBoardManager()
 mainManager.render();   
 
-// function footer (a) {
-//     const footerFinder = document.querySelector(".footer");
-//     const footerBox = document.createElement("div");
-//     const footerSpan = document.createElement("span");
-//     footerBox.append(footerSpan);
-//     footerFinder.append(footerBox);
-//     footerSpan.innerText = a;
-// }
+function footer (a) {
+    const footerFinder = document.querySelector(".footer");
+    const footerBox = document.createElement("div");
+    const footerSpan = document.createElement("span");
+    footerBox.append(footerSpan);
+    footerFinder.append(footerBox);
+    footerSpan.innerText = a;
+}
 
-// function adver (a) {
-//     const adFinder = document.querySelector(".content");
-//     const adDiv = document.createElement("div");
-//     adDiv.classList.add("ad-box");
-//     const adSpan = document.createElement("span");
-//     adFinder.append(adDiv);
-//     adDiv.append(adSpan);
-//     adSpan.innerText = a;
-// }
+function adver (a) {
+    const adFinder = document.querySelector(".content");
+    const adDiv = document.createElement("div");
+    adDiv.classList.add("ad-box");
+    const adSpan = document.createElement("span");
+    adFinder.append(adDiv);
+    adDiv.append(adSpan);
+    adSpan.innerText = a;
+}
 
-// const callback = (text, time) => {
-//     return new Promise((res, rej)=>{
-//         try{
-//             setTimeout(()=>{
-//                 res(text);
-//             }, time)
-//         }catch(e){
-//             console.log(e);
-//         }
-//     })
-// }
+const callback = (text, time) => {
+    return new Promise((res, rej)=>{
+        try{
+            setTimeout(()=>{
+                res(text);
+            }, time)
+        }catch(e){
+            console.log(e);
+        }
+    })
+}
 
-// const asyncfooter = async () => {
-//     try{
-//         const test = await callback("게시판", 2000);
-//         footer(test)
-//     }catch(e){
-//         console.log(e);
-//     }
-// }
-// const asyncad = async () => {
-//     try{
-//         const test2 = await callback("광고", 4000);
-//         adver(test2);
-//     }catch(e){
-//         console.log(e);
-//     }
-// }
+const asyncfooter = async () => {
+    try{
+        const test = await callback("게시판", 2000);
+        footer(test)
+    }catch(e){
+        console.log(e);
+    }
+}
+const asyncad = async () => {
+    try{
+        const test2 = await callback("광고", 4000);
+        adver(test2);
+    }catch(e){
+        console.log(e);
+    }
+}
 
-// asyncad();
-// asyncfooter();
+asyncad();
+asyncfooter();

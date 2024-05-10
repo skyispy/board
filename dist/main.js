@@ -1,3 +1,12 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 class MainBoardManager {
     constructor() {
         this.postList = [];
@@ -109,3 +118,52 @@ class MainBoardManager {
 }
 const mainManager = new MainBoardManager();
 mainManager.render();
+function footer(a) {
+    const footerFinder = document.querySelector(".footer");
+    const footerBox = document.createElement("div");
+    const footerSpan = document.createElement("span");
+    footerBox.append(footerSpan);
+    footerFinder.append(footerBox);
+    footerSpan.innerText = a;
+}
+function adver(a) {
+    const adFinder = document.querySelector(".content");
+    const adDiv = document.createElement("div");
+    adDiv.classList.add("ad-box");
+    const adSpan = document.createElement("span");
+    adFinder.append(adDiv);
+    adDiv.append(adSpan);
+    adSpan.innerText = a;
+}
+const callback = (text, time) => {
+    return new Promise((res, rej) => {
+        try {
+            setTimeout(() => {
+                res(text);
+            }, time);
+        }
+        catch (e) {
+            console.log(e);
+        }
+    });
+};
+const asyncfooter = () => __awaiter(this, void 0, void 0, function* () {
+    try {
+        const test = yield callback("게시판", 2000);
+        footer(test);
+    }
+    catch (e) {
+        console.log(e);
+    }
+});
+const asyncad = () => __awaiter(this, void 0, void 0, function* () {
+    try {
+        const test2 = yield callback("광고", 4000);
+        adver(test2);
+    }
+    catch (e) {
+        console.log(e);
+    }
+});
+asyncad();
+asyncfooter();
