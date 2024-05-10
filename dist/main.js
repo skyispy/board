@@ -80,6 +80,30 @@ class MainBoardManager {
                     location.reload();
                 }
             };
+            const search_find = document.getElementById("search_text");
+            const search = document.getElementById("search_btn");
+            search.onclick = () => {
+                content_find.innerHTML = "";
+                for (let i = 0; i < localdata.length; i++) {
+                    if (localdata[i].title.includes(String(search_find.value)) === true) {
+                        console.log(localdata[i].title.includes(String(search_find.value)));
+                        const div1 = document.createElement("div");
+                        div1.classList.add("main-box");
+                        div1.draggable = true;
+                        div1.dataset.index = `${i}`;
+                        const span1 = document.createElement("span");
+                        const span2 = document.createElement("span");
+                        const span3 = document.createElement("span");
+                        const span4 = document.createElement("span");
+                        span1.innerHTML = localdata[i].writer;
+                        span2.innerHTML = localdata[i].title;
+                        span3.innerHTML = localdata[i].date;
+                        span4.innerHTML = localdata[i].count;
+                        div1.append(span1, span2, span3, span4);
+                        content_find.append(div1);
+                    }
+                }
+            };
         }
     }
 }
