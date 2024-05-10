@@ -38,6 +38,48 @@ class MainBoardManager {
                     location.href = "./detail.html?index=" + i;
                 }
             };
+            let _target = null;
+            document.ondragstart = (e) => {
+                if (e.target.classList.contains("main-box")) {
+                    _target = e.target;
+                    _target.style.backgroundColor = "gray";
+                    console.log(e.target.getAttribute("data-index"));
+                    localStorage.setItem("num", JSON.stringify(e.target.getAttribute("data-index")));
+                }
+            };
+            document.ondragend = (e) => {
+                if (e.target.classList.contains("main-box")) {
+                    _target.style.backgroundColor = "transparent";
+                    _target = null;
+                }
+            };
+            document.ondragenter = (e) => {
+                if (e.target.classList.contains("main-box") && _target !== null)
+                    e.target.style.backgroundColor = "gray";
+            };
+            document.ondragleave = (e) => {
+                if (e.target.classList.contains("main-box") && _target !== null)
+                    e.target.style.backgroundColor = "transparent";
+            };
+            document.ondragover = (e) => {
+                if (e.target.classList.contains("main-box") && _target !== null)
+                    e.preventDefault();
+            };
+            document.ondrop = (e) => {
+                if (e.target.classList.contains("main-box") && _target !== null) {
+                    e.target.style.backgroundColor = "gray";
+                    console.log(e.target.getAttribute("data-index"));
+                    let exchange = localdata[e.target.getAttribute("data-index")];
+                    let num = JSON.parse(localStorage.getItem("num"));
+                    console.log(num);
+                    localdata[e.target.getAttribute("data-index")] = localdata[num];
+                    localdata[num] = exchange;
+                    console.log(localdata);
+                    console.log(localdata);
+                    localStorage.setItem("board_data", JSON.stringify(localdata));
+                    location.reload();
+                }
+            };
         }
     }
 }

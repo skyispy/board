@@ -52,54 +52,54 @@ class MainBoardManager {
                     location.href = "./detail.html?index="+i;
                 }
             }
-            // let _target = null;
+            let _target = null;
 
-            // document.ondragstart = (e: any) => {
-            //     if(e.target.classList.contains("main-box")){
-            //         _target = e.target;
-            //         _target.style.backgroundColor = "gray";
-            //         console.log(e.target.getAttribute("data-index"))
-            //         localStorage.setItem("num", JSON.stringify(e.target.getAttribute("data-index")))
-            //     }
-            // }
+            document.ondragstart = (e: any) => {
+                if(e.target.classList.contains("main-box")){
+                    _target = e.target;
+                    _target.style.backgroundColor = "gray";
+                    console.log(e.target.getAttribute("data-index"))
+                    localStorage.setItem("num", JSON.stringify(e.target.getAttribute("data-index")))
+                }
+            }
 
-            // document.ondragend = (e: any) => {
-            //     if(e.target.classList.contains("main-box")){
-            //         _target.style.backgroundColor = "transparent";
-            //         _target = null;
-            //     }
-            // }
+            document.ondragend = (e: any) => {
+                if(e.target.classList.contains("main-box")){
+                    _target.style.backgroundColor = "transparent";
+                    _target = null;
+                }
+            }
 
-            // document.ondragenter = (e: any) => {
-            //     if(e.target.classList.contains("main-box") && _target !== null)
-            //         e.target.style.backgroundColor = "gray";
-            // }
+            document.ondragenter = (e: any) => {
+                if(e.target.classList.contains("main-box") && _target !== null)
+                    e.target.style.backgroundColor = "gray";
+            }
 
-            // document.ondragleave = (e: any) => {
-            //     if(e.target.classList.contains("main-box") && _target !== null)
-            //         e.target.style.backgroundColor = "transparent";
-            // }
+            document.ondragleave = (e: any) => {
+                if(e.target.classList.contains("main-box") && _target !== null)
+                    e.target.style.backgroundColor = "transparent";
+            }
 
-            // document.ondragover = (e: any) => {
-            //     if(e.target.classList.contains("main-box") && _target !== null)
-            //         e.preventDefault();
-            // }
+            document.ondragover = (e: any) => {
+                if(e.target.classList.contains("main-box") && _target !== null)
+                    e.preventDefault();
+            }
 
-            // document.ondrop = (e: any) => {
-            //     if(e.target.classList.contains("main-box") && _target !== null){
-            //         e.target.style.backgroundColor = "gray";
-            //         console.log(e.target.getAttribute("data-index"))
-            //         let exchange = localdata[e.target.getAttribute("data-index")]
-            //         let num = JSON.parse(localStorage.getItem("num"));
-            //         console.log(num)
-            //         localdata[e.target.getAttribute("data-index")] = localdata[num];
-            //         localdata[num] = exchange  
-            //         console.log(localdata)
-            //         console.log(localdata)
-            //         localStorage.setItem("board_data", JSON.stringify(localdata))
-            //         location.reload();
-            //     }
-            // }
+            document.ondrop = (e: any) => {
+                if(e.target.classList.contains("main-box") && _target !== null){
+                    e.target.style.backgroundColor = "gray";
+                    console.log(e.target.getAttribute("data-index"))
+                    let exchange = localdata[e.target.getAttribute("data-index")]
+                    let num = JSON.parse(localStorage.getItem("num"));
+                    console.log(num)
+                    localdata[e.target.getAttribute("data-index")] = localdata[num];
+                    localdata[num] = exchange  
+                    console.log(localdata)
+                    console.log(localdata)
+                    localStorage.setItem("board_data", JSON.stringify(localdata))
+                    location.reload();
+                }
+            }
             // const search_find = <HTMLInputElement>document.getElementById("search_text");
             // const search = <HTMLButtonElement>document.getElementById("search_btn");
             // search.onclick = () => {
